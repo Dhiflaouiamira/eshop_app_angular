@@ -1,0 +1,17 @@
+.banner2 {
+    margin-left: 5pt;
+}
+
+ /* Container holding the image and the text */
+ .banner-container {
+    position: relative;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    bottom: 70%;
+    color: rgb(18, 17, 17);
+    padding-left: 15%;
+    padding-right: 20px;
+  } 

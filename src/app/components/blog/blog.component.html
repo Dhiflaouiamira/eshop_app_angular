@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+        <img class="blog-img" src="{{blog.image}}" alt="">
+        <br><br>
+        <div class="card-sub-title">
+            By <a href="/">{{blog.author}}</a> on {{blog.date| date}}
+        </div>
+        <div class="card-title">
+            <h4>{{blog.title}}</h4>
+        </div>
+    </div>
+    <div class="card-body">
+        <br>
+        <p>{{blog.content}}</p>
+    </div>
+</div>

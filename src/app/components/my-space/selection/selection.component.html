@@ -1,0 +1,43 @@
+<div class="list-group">
+    <div class="row" *ngFor="let product of cart">
+      <a class="list-group-item list-group-item-action" aria-current="true">
+        <div class="row">
+          <div class="col-3">
+            <img src="{{product.image}}" class="img-fluid product-image" alt="">
+          </div>
+          <div class="col">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{ product.name }}</h5>
+              <small>x {{ product.quantity }}</small>
+            </div>
+            <p class="mb-1 text-secondary">Price: {{ product.price }} $</p>
+            <p class="mb-1 text-secondary">Price en promo: {{ product.promo }} $</p>
+            <p class="mb-1 text-secondary">Type : {{ product.type }}</p>
+            <p class="mb-1 text-secondary1">{{ product.conditions }}</p>
+          </div>
+        </div>
+  
+        <button class="btn btn-danger" (click)="deletefromCart(product)">X</button>
+  
+      </a>
+      <br>
+    </div>
+    <br>
+    <div class="alert">
+      <div class="text-dark text-end">
+        Total: <b>{{ total | number }}$</b>
+      </div>
+    </div>
+    <br>
+  
+    <div class="row">
+      <div class="col text-end">
+        <button type="button" class="btn btn-secondary" routerLink="/products">Back to shop</button>
+      </div>
+      <div class="col">
+        <!-- Call the handleValidatedCommand function on click -->
+        <button type="button" class="btn btn-warning" routerLink="/achats" (click)="handleValidatedCommand()">Validé la commande</button>
+      </div>
+    </div>
+  </div>
+  

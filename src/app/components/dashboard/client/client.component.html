@@ -1,0 +1,228 @@
+<div class="container">
+  <div class="d-flex justify-content-end mt-3">
+    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#clientModalAdd">
+      Add User
+    </button>
+    </div>
+    <div class="ser">
+      <input type="text" (ngModelChange)="searchUsers($event)" class="form-control my-4"
+        placeholder="Search User">
+    </div>
+
+  <div class="row">
+    <div class="col-md-9">
+      <div class="row">
+        <div *ngFor="let user of users" class="col-md-6 mb-4">
+          <!-- User Card -->
+          <div class="card">
+            <div class="card-body text-center">
+              <!-- User Details {{ user.image }} -->
+              <img src="https://img.myloview.fr/stickers/default-avatar-profile-vector-user-profile-700-200353986.jpg" class="avatar rounded-circle" alt="...">
+              <br><br>
+              <p class="card-text"><strong>Full Name:</strong> {{ user.fullName }}</p>
+              <p class="card-text"><strong>Username:</strong> {{ user.username }}</p>
+              <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+              <p class="card-text"><strong>Role:</strong>
+                <span [ngClass]="{
+                  'text-danger': user.role === 'admin',
+                  'text-primary': user.role === 'agent',
+                  'text-success': user.role === 'client'
+                }">
+                  <i [ngClass]="{
+                    'fas fa-user-shield': user.role === 'admin',
+                    'fas fa-user-tie': user.role === 'agent',
+                    'fas fa-user': user.role === 'client'
+                  }"></i>
+                  {{ user.role | titlecase }}
+                </span>
+              </p>
+              <p class="card-text"><strong>Phone:</strong> {{ user.phone }}</p>
+              <button class="btn btn-primary me-2" (click)="editUser(user)" data-bs-toggle="modal"
+                data-bs-target="#clientModalupdate">Edit</button>
+              <button class="btn btn-danger" (click)="deleteUser(user)">
+                <i class="fas fa-trash-alt"></i> Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <!-- Role Card -->
+      <div class="card-body">
+        <h5 class="card-title">Filter by Role</h5>
+        <div class="form-check">
+          <div class="form-check" *ngFor="let role of userRole, let i as index">
+            <input class="form-check-input" (change)="select(role)" type="checkbox" id="{{i}}">
+            <label class="form-check-label" for="{{i}}">
+              {{ role }}
+            </label>
+          </div>
+      </div>
+
+
+
+      
+    </div>
+  </div>
+</div>
+
+<!-- Modal for update -->
+<div class="modal fade" id="clientModalupdate" tabindex="-1" aria-labelledby="clientModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="clientModalLabel">Update {{userobj.username}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formvalue">
+          <!-- Username -->
+          <div class="mb-3 row">
+            <label for="username" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+              <input  type="text" formControlName="username" class="form-control" id="username" aria-describedby="usernameHelp" [disabled]="true" >
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3 row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+          </div>
+
+          <!-- Role -->
+          <div class="mb-3 row">
+            <label for="role" class="col-sm-2 col-form-label">Role</label>
+            <div class="col-sm-10">
+              <select formControlName="role" class="form-select" id="role" aria-describedby="roleHelp">
+                <option value="admin">admin</option>
+                <option value="client">user</option>
+                <option value="agent">agent</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Full Name -->
+          <div class="mb-3 row">
+            <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
+            <div class="col-sm-10">
+              <input type="text" formControlName="fullName" class="form-control" id="fullName" aria-describedby="fullNameHelp">
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-3 row">
+            <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-10">
+              <input type="tel" formControlName="phone" class="form-control" id="phone" aria-describedby="phoneHelp">
+            </div>
+          </div>
+         
+
+          <!-- Checkbox -->
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary" (click)="updateUserDetails() ">
+          <i class="fas fa-edit"></i> Edit
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal for adding new user -->
+<div class="modal fade" id="clientModalAdd" tabindex="-1" aria-labelledby="clientModalAddLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="clientModalAddLabel">Add New User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formvalue">
+          <!-- Username -->
+          <div class="mb-3 row">
+            <label for="username" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+              <input type="text" formControlName="username" class="form-control" id="username" aria-describedby="usernameHelp">
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3 row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+          </div>
+
+          <!-- Role -->
+          <div class="mb-3 row">
+            <label for="role" class="col-sm-2 col-form-label">Role</label>
+            <div class="col-sm-10">
+              <select formControlName="role" class="form-select" id="role" aria-describedby="roleHelp">
+                <option value="admin">Admin</option>
+                <option value="client">User</option>
+                <option value="agent">Agent</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Full Name -->
+          <div class="mb-3 row">
+            <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
+            <div class="col-sm-10">
+              <input type="text" formControlName="fullName" class="form-control" id="fullName" aria-describedby="fullNameHelp">
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-3 row">
+            <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-10">
+              <input type="tel" formControlName="phone" class="form-control" id="phone" aria-describedby="phoneHelp">
+            </div>
+          </div>
+
+
+          
+
+           
+          <!--image-->
+          <div class="mb-3 row">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="text" formControlName="password" class="form-control" id="password" aria-describedby="phoneHelp">
+            </div>
+          </div>
+
+
+
+          <!-- Checkbox -->
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary" (click)="postUserDetails()">
+          Add User
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

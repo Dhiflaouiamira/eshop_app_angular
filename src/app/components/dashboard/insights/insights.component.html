@@ -1,0 +1,46 @@
+<div class="card-body insights">
+    <div class="row">
+        <div class="col col-md-3">
+            <div class="card-title text-light">
+                <b>DASHBOARD</b>
+            </div>
+        </div>
+        <div class="col-md-5 offset-md-1">
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Search">
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-outline-light mb-3">Search</button>
+          </div>
+    </div>
+    <div class="row offset-md-1">
+        <div class="col-md-2 statcol" *ngFor="let stat of stats">
+            <div class="card-body bg-white">
+                <div class="card-sub-title text-secondary">
+                    <b>{{stat.name}}</b>
+                </div>
+                <div class="h3">{{stat.value}}</div>
+                <div class="p">
+                    <div *ngIf="stat.percentage>0" class="text-success">
+                        +{{stat.value}}
+                    </div>
+                    <div *ngIf="stat.percentage<0" class="text-danger">
+                        -{{stat.value}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4 offset-md-1">
+            <div class="chart-container">
+                <canvas  id="ordersChart" >{{ ordersChart }}</canvas>
+            </div> 
+        </div>
+        <div class="col-md-4 bg-white">
+            <div class="chart-container">
+                <canvas  id="salesChart" >{{ salesChart }}</canvas>
+            </div> 
+        </div> 
+    </div>
+</div>

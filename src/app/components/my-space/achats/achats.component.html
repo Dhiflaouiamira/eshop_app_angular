@@ -1,0 +1,34 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Products</th>
+        <th scope="col">price</th>
+
+        <th scope="col">Status</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.createdAt | date }}</td>
+        <td>
+            <ul>
+                <li *ngFor="let p of order.products">{{p.name}}</li>
+            </ul>
+        </td>
+        <td>
+          <ul>
+              <li *ngFor="let p of order.products" >{{p.price}} $</li>
+          </ul>
+
+          
+      </td>
+        <td>
+            <span *ngIf="order.status=='on-going'" class="badge bg-warning">{{ order.status }}</span>
+            <span *ngIf="order.status=='delivered'" class="badge bg-success">{{ order.status }}</span>
+        </td>
+        <td>{{ order.total }} $</td>
+      </tr>
+    </tbody>
+</table>

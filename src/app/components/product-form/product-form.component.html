@@ -1,0 +1,58 @@
+<br>
+<div class="row">
+    <div class="col col-md-4 offset-md-1">
+
+<h3>Update product</h3>
+
+        <!-- The form fields for product details -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" [(ngModel)]="product.name" class="form-control" id="name">
+          </div>
+      
+          <div class="mb-3">
+            <label for="promo" class="form-label">Promo</label>
+            <input type="text" [(ngModel)]="product.promo" class="form-control" id="promo">
+          </div>
+      
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" [(ngModel)]="product.price" class="form-control" id="price">
+          </div>
+      
+          <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input type="text" [(ngModel)]="product.image" class="form-control" id="image">
+          </div>
+      
+    </div>
+    
+    <div class="col col-md-4 offset-md-1">
+        <br>
+        <br>
+        <div class="mb-3">
+            <label for="stars" class="form-label">Stars</label>
+            <input type="number" [(ngModel)]="product.stars" class="form-control" id="stars">
+          </div>
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" [(ngModel)]="product.quantity" class="form-control" id="quantity">
+          </div>
+      
+          <div class="mb-3">
+            <label for="conditions" class="form-label">Conditions</label>
+            <input type="text" [(ngModel)]="product.conditions" class="form-control" id="conditions">
+          </div>
+      
+          <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <select [(ngModel)]="product.type" class="form-select" id="type">
+              <option *ngFor="let type of productTypes" [value]="type">{{ type }}</option>
+            </select>
+          </div>
+      
+          <!-- Add other form fields for updating product details -->
+      
+          <button type="button" (click)="update()" class="btn btn-primary">Update</button>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="container">
+    <br>
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Create an account</h5>
+            <img class="img-logo" src="assets/images/wimbee.jpg" alt="">
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input type="email" [(ngModel)]="user.email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" [(ngModel)]="user.username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" [(ngModel)]="user.fullName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" [(ngModel)]="user.password" class="form-control" id="exampleInputPassword1" required="">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Phone</label>
+                <input type="text" [(ngModel)]="user.phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>
+            <br>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">I accept policy and privacy</label>
+            </div>
+            <br>
+            <div *ngIf="formResponse.message.length>0" class="alert alert-success" role="alert">
+              {{ formResponse.message }}
+            </div>
+            <div *ngIf="formResponse.error.length>0" class="alert alert-warning" role="alert">
+              {{ formResponse.error }}
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn btn-warning" (click)="signUp()">Sign up</button>
+            </div>
+            <br>
+            <div class="text-center">
+                Already have an account? <a href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+</div>

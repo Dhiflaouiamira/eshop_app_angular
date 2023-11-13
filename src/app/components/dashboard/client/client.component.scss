@@ -1,0 +1,266 @@
+/* styles.css (ou votre fichier CSS personnalisé) */
+.avatar {
+  width: 30%;
+}
+
+
+/* Pour ajouter des bordures plus fines autour des cellules */
+.custom-table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+  }
+  
+  /* Pour changer la couleur de fond des lignes paires */
+  .custom-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Pour centrer le contenu des cellules du corps du tableau */
+  .custom-table tbody td {
+    text-align: center;
+  }
+  
+  /* Pour ajouter un espacement entre les boutons d'action */
+  .custom-table td button {
+    margin-right: 5px;
+  }
+  
+  .btn-primary{
+
+    margin-right: 1em;
+  }
+  .table-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table th {
+    font-weight: bold;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table th {
+    font-weight: bold;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .card{
+
+    padding-left: 0%;
+    font-size: 1em;
+    margin-bottom: 1em;
+  } 
+
+  .btn-success{
+
+
+    margin-bottom: 1em;
+  }
+
+  .col-md-5{
+
+    margin-right: 2em;
+  }
+  /* Custom CSS for the card layout */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  margin-bottom: 0.5rem;
+}
+
+/* Style for the "Add Client" button */
+.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+/* Style for the "Edit" and "Delete" buttons */
+.btn-primary,
+.btn-danger {
+  width: 100px;
+}
+
+/* Style for the search input */
+.form-control {
+  width: 100%;
+}
+
+/* Custom styles for the container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Optional: Adjust the font and background color for the body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+/* ... other styles ... */
+
+/* Custom text colors based on the role type */
+
+/* ... other styles ... */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  margin-bottom: 0.5rem;
+}
+
+
+
+/* Role Icons */
+.card-text .fa-user-shield,
+.card-text .fa-user-tie,
+.card-text .fa-user {
+  font-size: 1.5rem; /* Increased icon size */
+  margin-right: 8px;
+}
+
+/* Role Colors */
+.text-danger {
+  color: #dc3545; /* Red for 'admin' */
+}
+
+.text-primary {
+  color: #007bff; /* Blue for 'agent' */
+}
+
+.text-success {
+  color: #28a745; /* Green for 'client' */
+}
+
+/* Bigger and bolder role text */
+.card-text span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+/* ... previous CSS code ... */
+
+/* Adjusted colors for the "Edit" and "Delete" buttons */
+.btn-primary {
+  background-color: #1cd8e6; /* Lighter shade of blue */
+  border-color: #2aa59b; /* Lighter shade of blue */
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #dd5275; /* Lighter shade of red */
+  border-color: #720f19; /* Lighter shade of red */
+  color: #fff;
+}
+
+/* ... rest of the CSS code ... */
+.col-md-3{margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+
+.ser{
+
+  margin-top: 0.5em;
+}

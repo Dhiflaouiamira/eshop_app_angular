@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-3">
+        <br><br>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <div class="row" *ngFor="let apage of cliPages; let i= index">
+                    <div class="col">
+                        <a  class="nav-link" (click)="openTab(i)" >
+                            <img class="icon" src="{{apage.icon}}" alt="">
+                            {{ apage.name }}
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Global settings</a></li>
+            <li><a class="dropdown-item" href="#">New updates</a></li>
+
+        </ul>
+    </div>
+    <div class="col">
+        <br><br>
+        <app-achats *ngIf="cliPages[0].isActive"></app-achats>
+        <app-selection *ngIf="cliPages[1].isActive"></app-selection>
+
+        <app-profil *ngIf="cliPages[2].isActive"></app-profil>
+       
+    </div>
+</div>

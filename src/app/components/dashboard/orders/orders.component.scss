@@ -1,0 +1,114 @@
+.icon {
+    margin: 1em;
+}
+
+.col-md-5{
+
+
+    margin-bottom: 2em;
+    margin-left: 3em;
+}
+.h1{
+
+    margin-right: 100em}
+
+    .btn-primary{
+
+        margin-bottom: 0.5em;
+    }
+    /* Style for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  /* Style for the "Orders" heading */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for each order card */
+  .card {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the client name */
+  .card strong:nth-child(3) {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Style for the status badge */
+  .badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Style for the "Edit Status" and "Delete" buttons */
+  .card button {
+    margin-top: 10px;
+  }
+  
+  /* Style for the products list */
+  ul {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  
+  /* Style for each product in the list */
+  li {
+    list-style-type: none;
+    margin-bottom: 5px;
+  }
+  
+  /* Style for the "Update Client Details" modal header */
+  .modal-header {
+    background-color: #007bff;
+    color: #fff;
+    border-bottom: none;
+  }
+  
+  /* Style for the modal title */
+  .modal-title {
+    font-size: 20px;
+  }
+  
+  /* Style for the modal body */
+  .modal-body {
+    padding: 20px;
+  }
+  
+  /* Style for the modal form */
+  form {
+    margin-bottom: 0;
+  }
+  
+  /* Style for the modal footer */
+  .modal-footer {
+    border-top: none;
+  }
+  
+  /* Style for the "Edit" button in the modal footer */
+  .modal-footer button.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  /* Style for the "Close" button in the modal footer */
+  .modal-footer button.btn-secondary {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  /* Style for the checkbox in the modal */
+  .form-check-input {
+    margin-right: 10px;
+  }
+  

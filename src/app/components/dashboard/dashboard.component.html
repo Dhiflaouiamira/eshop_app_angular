@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-3">
+        <br><br>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <div class="row" *ngFor="let apage of admPages; let i= index">
+                    <div class="col">
+                        <a  class="nav-link" (click)="openTab(i)" >
+                            <img class="icon" src="{{apage.icon}}" alt="">
+                            {{ apage.name }}
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Global settings</a></li>
+            <li><a class="dropdown-item" href="#">New updates</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <br><br>
+        <app-insights *ngIf="admPages[0].isActive"></app-insights>
+        <app-promotions *ngIf="admPages[1].isActive"></app-promotions>
+        <app-orders *ngIf="admPages[2].isActive"></app-orders>
+        <app-products *ngIf="admPages[3].isActive"></app-products>
+        <app-client *ngIf="admPages[4].isActive"></app-client>
+        <app-contact *ngIf="admPages[5].isActive"></app-contact>
+
+    </div>
+</div>

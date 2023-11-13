@@ -1,0 +1,66 @@
+
+<nav class="navbar navbar-expand-lg overflow bg-secondary">
+  <div class="container text-white">
+    Free shipping for standard order over $100 
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg overflow navbar-dark bg-dark">
+    <div class="container">
+      <img class="logo" src="assets/images/logo.png" alt="">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/aboutus">A propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/products">Nos produit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  href="/msg">Contact</a>
+         </li>
+          <li class="nav-item">
+            <a class="nav-link active" *ngIf="appStorage.getItem('role')=='admin'" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" *ngIf="appStorage.getItem('role')=='client'" href="/myspace">My space</a>
+          </li>admin
+          
+       
+        </ul>
+        <div>
+          <svg class="svg-header" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0.222in" height="0.222in">
+            <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M11.428,10.058 L10.696,10.058 L10.424,9.781 C11.339,8.776 11.884,7.405 11.884,5.941 C11.884,2.650 9.232,-0.001 5.941,-0.001 C2.651,-0.001 -0.000,2.650 -0.000,5.941 C-0.000,9.231 2.651,11.883 5.941,11.883 C7.406,11.883 8.777,11.338 9.781,10.423 L10.058,10.695 L10.058,11.428 L14.629,15.999 L16.000,14.629 L11.428,10.058 ZM5.941,10.058 C3.656,10.058 1.831,8.226 1.831,5.941 C1.831,3.655 3.656,1.830 5.941,1.830 C8.227,1.830 10.058,3.655 10.058,5.941 C10.058,8.226 8.227,10.058 5.941,10.058 L5.941,10.058 Z"></path>
+          </svg>
+          <!-- Button trigger modal -->
+          <span class="badge bg-danger rounded-pill">3</span>
+          <svg data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" class="svg-header" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0.333in" height="0.306in">
+            <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M21.507,21.994 L13.824,21.994 C12.448,21.994 11.332,20.867 11.332,19.479 L11.332,10.895 C11.332,10.624 11.547,10.406 11.816,10.406 L14.485,10.406 L14.485,9.848 C14.485,8.079 15.910,6.640 17.663,6.636 C19.421,6.636 20.846,8.079 20.846,9.848 L20.846,10.406 L23.515,10.406 C23.785,10.406 24.000,10.624 24.000,10.895 L24.000,19.479 C24.000,20.867 22.884,21.994 21.507,21.994 ZM19.877,9.848 C19.877,8.617 18.883,7.619 17.668,7.615 C16.449,7.615 15.455,8.617 15.455,9.848 L15.455,10.406 L19.877,10.406 L19.877,9.848 ZM23.030,11.385 L20.846,11.385 L20.846,12.600 C20.846,12.872 20.631,13.089 20.362,13.089 C20.092,13.089 19.877,12.872 19.877,12.600 L19.877,11.385 L15.455,11.385 L15.455,12.600 C15.455,12.872 15.239,13.089 14.970,13.089 C14.701,13.089 14.485,12.872 14.485,12.600 L14.485,11.385 L12.301,11.385 L12.301,19.479 C12.301,20.324 12.982,21.016 13.824,21.016 L21.507,21.016 C22.345,21.016 23.030,20.329 23.030,19.479 L23.030,11.385 ZM15.117,6.201 C14.847,6.201 14.632,5.983 14.632,5.712 L14.632,4.748 L11.694,4.748 L11.694,6.592 C11.694,6.863 11.478,7.081 11.209,7.081 C10.940,7.081 10.724,6.863 10.724,6.592 L10.724,4.748 L4.882,4.748 L4.882,6.592 C4.882,6.863 4.667,7.081 4.397,7.081 C4.128,7.081 3.913,6.863 3.913,6.592 L3.913,4.748 L0.974,4.748 L0.974,18.856 C0.974,20.047 1.934,21.021 3.119,21.021 L9.882,21.021 C10.151,21.021 10.367,21.238 10.367,21.510 C10.367,21.777 10.151,21.999 9.877,21.999 L3.114,21.999 C1.396,21.999 -0.000,20.590 -0.000,18.856 L-0.000,4.259 C-0.000,3.987 0.215,3.769 0.485,3.769 L3.913,3.769 C3.996,1.674 5.705,-0.001 7.801,-0.001 C9.897,-0.001 11.606,1.679 11.689,3.769 L15.117,3.769 C15.386,3.769 15.602,3.987 15.602,4.259 L15.602,5.712 C15.602,5.983 15.386,6.201 15.117,6.201 ZM7.801,0.977 C6.244,0.977 4.965,2.218 4.882,3.769 L10.719,3.769 C10.636,2.218 9.358,0.977 7.801,0.977 Z"></path>
+          </svg>
+          <span class="badge bg-danger rounded-pill">1</span>
+          <svg class="svg-header" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0.306in" height="0.264in">
+            <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M11.000,18.999 C10.687,18.999 10.385,18.889 10.149,18.689 C9.261,17.935 8.404,17.226 7.648,16.600 L7.644,16.597 C5.428,14.763 3.513,13.180 2.182,11.620 C0.693,9.877 -0.000,8.224 -0.000,6.418 C-0.000,4.663 0.620,3.044 1.745,1.858 C2.884,0.660 4.446,-0.001 6.146,-0.001 C7.416,-0.001 8.579,0.389 9.602,1.157 C10.119,1.545 10.587,2.020 11.000,2.574 C11.413,2.020 11.881,1.545 12.397,1.157 C13.421,0.389 14.584,-0.001 15.854,-0.001 C17.553,-0.001 19.116,0.660 20.255,1.858 C21.380,3.044 22.000,4.663 22.000,6.418 C22.000,8.224 21.307,9.877 19.818,11.620 C18.486,13.180 16.573,14.763 14.356,16.597 C13.599,17.223 12.741,17.933 11.850,18.689 C11.615,18.889 11.313,18.999 11.000,18.999 L11.000,18.999 ZM6.146,1.251 C4.811,1.251 3.585,1.767 2.693,2.706 C1.787,3.660 1.288,4.978 1.288,6.418 C1.288,7.936 1.870,9.294 3.174,10.822 C4.434,12.298 6.309,13.849 8.480,15.645 L8.484,15.648 C9.242,16.276 10.103,16.988 10.998,17.748 C11.899,16.987 12.760,16.273 13.520,15.645 C15.691,13.849 17.565,12.298 18.826,10.822 C20.130,9.294 20.711,7.936 20.711,6.418 C20.711,4.978 20.212,3.660 19.307,2.706 C18.415,1.767 17.189,1.251 15.854,1.251 C14.876,1.251 13.978,1.552 13.186,2.147 C12.479,2.678 11.987,3.348 11.699,3.818 C11.550,4.058 11.289,4.203 11.000,4.203 C10.711,4.203 10.449,4.058 10.301,3.818 C10.013,3.348 9.520,2.678 8.814,2.147 C8.021,1.552 7.123,1.251 6.146,1.251 L6.146,1.251 Z"></path>
+          </svg>
+          <button *ngIf="appStorage.getItem('role')" class="btn btn-danger" (click)="signOut()">Sign out</button>
+        
+          <button *ngIf="!appStorage.getItem('role')" type="button" class="btn btn-outline-danger" routerLink="login">Login</button>
+
+        </div>
+      </div>
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">My Shopping Cart</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <app-shoping-cart></app-shoping-cart>
+  </div>
+</div>

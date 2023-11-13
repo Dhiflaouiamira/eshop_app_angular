@@ -1,0 +1,29 @@
+<div class="banner-container">
+    <img src="assets/images/slide-01.jpg" alt="">
+    <div class="text-block">
+        <h1><b>Discover our products!</b></h1>
+        <a type="button" routerLink="/products" class="btn btn-outline-warning btn-lg">Browse products</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-10 offset-md-2">
+        <br>
+        <div class="card-group">
+            <app-product class="my-card" *ngFor="let product of products.slice(0,10)" [productobj]="product"></app-product>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    
+    <app-ads-banner></app-ads-banner>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let blog of blogs" class="col col-md-4">
+            <app-blog [blog]="blog"></app-blog>
+        </div>
+    </div>
+    <br>
+</div>

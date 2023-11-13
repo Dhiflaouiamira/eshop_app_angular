@@ -1,0 +1,23 @@
+<div class="card-title h4">Products & Promotions</div>
+
+<div class="row">
+    <div class="col col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-subtitle h5">Search for products</div>
+                <div>
+                    <label for=""></label>
+                    <input type="text" class="form-control" placeholder="search text">
+                </div>
+                <br>
+                <button type="submit" (click)="search()" class="btn btn-secondary">Search</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h6>{{products.length}} results</h6>
+        <div class="card-group">
+            <app-product class="my-card" *ngFor="let product of products" [productobj]="product"></app-product>
+        </div>
+    </div>
+</div>

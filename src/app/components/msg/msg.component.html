@@ -1,0 +1,33 @@
+
+
+<br>
+<div class="col-md-4 offset-md-4">  
+    <h2>Contact</h2>
+    <br>
+    <div class="mb-3">
+        <label class="form-label" for="userName">Your Name:</label>
+    <input type="text" class="form-control" placeholder="Your Name" [(ngModel)]="msg.fullName" id="userName">
+  
+    </div>
+    <div class="mb-3">
+        <label for="userEmail">Your Email:</label>
+    <input type="email" class="form-control" placeholder="Your Email" [(ngModel)]="msg.email" id="userEmail" required>
+  
+    </div>
+    <div class="mb-3">
+        <label for="emailSubject">Subject:</label>
+    <input type="text" class="form-control" placeholder="Subject" [(ngModel)]="msg.subject" id="emailSubject" required>
+  
+    </div>
+    <div class="mb-3">
+        <label for="emailMessage">Message:</label>
+    <textarea class="form-control" placeholder="Your Message Here" [(ngModel)]="msg.msg" id="emailMessage" required></textarea>
+    
+    </div>
+    <br>
+    <!-- Submit Button -->
+    <button class="btn btn-danger" (click)="addMsg(msg)">Submit</button>
+
+</div>
+<!-- /Main Form Ended -->
+
